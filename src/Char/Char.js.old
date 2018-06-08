@@ -1,0 +1,30 @@
+import React from 'react';
+import './Char.css';
+
+const char = (props) => {
+  
+  let letters = props.letters;
+  
+  if (props.letters) {
+    letters = (
+      <div>
+        {letters.map((letter, index) =>
+          <div
+            key={index}
+            onClick={() =>props.clicked(index)}
+            className="Char">
+            {letter}
+          </div>
+        )}
+      </div>
+      )
+  }
+
+  return (
+    <div>
+      {letters}
+    </div>
+  )
+}
+
+export default char;
